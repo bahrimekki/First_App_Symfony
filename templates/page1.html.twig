@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Page 1 !{% endblock %} 
+{% block body %}
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                {% for message in app.flashes('notice') %}
+                    {{message}}
+                {% endfor %}
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <div class="row g-0">
+                            <div class="col-md-9">
+                                <h5 class="card-title">liste des users</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/add" class="btn btn-primary">Add New User</a>
+                            </div>
+                        </div>
+                        {% for user in users %}
+                        <hr />
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://image.flaticon.com/icons/png/128/1077/1077114.png" alt="photo de profile">
+                            </div>
+                            <div class="col-md-8">
+                                <p class="card-text">
+                                    {{ user.FirstName }} {{ user.LastName }}
+                                </p>
+                                <a href="{{path('user',{'id':user.id})}}" class="btn btn-primary">Show</a>
+                                <a href="{{path('edit_user',{'id':user.id})}}" class="btn btn-primary">Edit</a>
+                                <a href="{{path('delet_user',{'id':user.id})}}" class="btn btn-danger">Delet</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

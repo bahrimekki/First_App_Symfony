@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} 
+{% block title %}{{user.FirstName}}{% endblock %} 
+{% block body %}
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <div class="row g-0">
+                            <div class="col-md-9">
+                                <h5 class="card-title">liste des users</h5>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="/" class="btn btn-primary">Liste Users</a>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://image.flaticon.com/icons/png/128/1077/1077114.png" alt="photo de profile">
+                            </div>
+                            <div class="col-md-8">
+                                <p class="card-text">
+                                    {{ user.FirstName }} {{ user.LastName }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

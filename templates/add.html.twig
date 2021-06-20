@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Add user{% endblock %} 
+{% block body %}
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-6 mx-auto">
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <h5 class="card-title">Add User</h5>
+                        <div class="row g-0">
+                            {{form(form)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
